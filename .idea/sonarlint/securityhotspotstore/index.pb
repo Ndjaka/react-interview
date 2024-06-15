@@ -42,8 +42,6 @@ T
 $src/components/ProgressBar/index.tsx,5/0/50fd5121f9fa26baa667e9e03addcc8bcc0c15ee
 \
 ,src/components/ProgressBar/progress-bar.scss,d/7/d79fce45b507c51f43fafdc513ebe853b2a2d152
-R
-"src/components/Pagination/index.js,d/2/d2f09f66055ffb19d543b3f8a52628654b90b4aa
 Y
 )src/components/Pagination/pagination.scss,9/8/98e1f2fb971812cbd7071eb5bea078999968de27
 S
@@ -110,3 +108,17 @@ w
 G.idea/sonarlint/issuestore/5/3/53585a096fe3a3b96321113856ae62602995a33b,9/6/96b9aff6b60ec6002a89317fe89bc34e601b8076
 w
 G.idea/sonarlint/issuestore/7/5/75ea7f3ea6d80d54bb5b2357996972d1632a5038,e/d/edc2dfd6e77e262d3f25ac4180068a28675c3c66
+B
+src/store/index.ts,7/8/788f62f848ec0936ef56cb3abc11e629c69f787c
+F
+src/types/MovieType.ts,e/c/ecc998a455febcbfc116632d45b3a9eeda400988
+B
+src/hooks/index.ts,5/f/5f2dab62b5203aa2062a82c806c47590f6c8e3a6
+P
+ src/features/movie/movieSlice.ts,0/8/08ef30e84cfe2c22b2acb8e64fca3b2db5dd2c6d
+L
+src/services/MovieService.ts,c/4/c40f2761ac0688ae3ed8d9a26b751e2c3a0d35e7
+^
+.node_modules/react-redux/dist/react-redux.d.ts,4/e/4e628409838766e8988ecfeb0e225af72f519a05
+`
+0node_modules/@reduxjs/toolkit/src/createSlice.ts,6/0/601433535b383471b8244f7747312767ff5b8563

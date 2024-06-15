@@ -1,18 +1,21 @@
 import './filter.scss';
 import Select from "react-select";
-import './filter.scss';
-const Filter = () => {
+import {useAppSelector} from "../../hooks";
 
-    const options = [
-        { value: 'Comedy', label: 'Comedy' },
-        { value: 'Action', label: 'Action' },
-        { value: 'Horror', label: 'Horror' },
-        { value: 'Romance', label: 'Romance' },
-    ];
+interface FilterProps {
+    handleChange: (selectedOption: any) => void;
+}
+const Filter = (props : FilterProps) => {
 
-    const handleChange = (selectedOption: any) => {
-        console.log(selectedOption);
-    }
+    const {handleChange} = props;
+    const {movies} = useAppSelector(state => state.movie)
+    const categories = new Set(movies.map(movie => movie.category));
+
+    const options = Array.from(categories).map(category => ({
+        value: category,
+        label: category
+    }));
+
 
     return (
         <div className={"filter"}>

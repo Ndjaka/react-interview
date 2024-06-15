@@ -32,20 +32,50 @@
     align-items: center;
     gap: 10px;
     margin-top: 10px;
-    button{
-        padding: 8px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
+    &-likes{
+        display: flex;
+        align-items: center;
+        gap: 5px;
         font-size: 1rem;
-        font-weight: 600;
-        color: #fff;
-        transition: all 0.3s;
-        &:hover{
-            transform: scale(1.05);
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        font-weight: 400;
+      button{
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #212121;
+      transition: all 0.3s;
+      &:hover{
+        transform: scale(1.05);
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      }
+        span{
+            font-size: 1rem;
+            font-weight: 400;
+            color: #212121;
         }
     }
+    }
+
+    &-delete{
+      padding: 8px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #212121;
+      transition: all 0.3s;
+      &:hover{
+        transform: scale(1.05);
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      }
+    }
+
   }
 
 }

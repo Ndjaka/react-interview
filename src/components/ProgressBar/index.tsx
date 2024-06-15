@@ -1,8 +1,12 @@
 import './progress-bar.scss';
 
-const ProgressBar = () => {
-    const likes = 100;
-    const dislikes = 50;
+interface ProgressBarProps {
+    likes: number;
+    dislikes: number;
+
+}
+const ProgressBar = (props : ProgressBarProps) => {
+   const {likes, dislikes} = props;
     return (
         <div className={'progress-bar'}>
             <div

@@ -635,9 +635,9 @@ Lockfile:
       "@types/prop-types" "*"
       csstype "^3.0.2"
   
-  "@types/use-sync-external-store@^0.0.3":
+  "@types/use-sync-external-index@^0.0.3":
     version "0.0.3"
-    resolved "https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz"
+    resolved "https://registry.npmjs.org/@types/use-sync-external-index/-/use-sync-external-index-0.0.3.tgz"
     integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
   
   "@typescript-eslint/eslint-plugin@^7.2.0":
@@ -1562,8 +1562,8 @@ Lockfile:
     resolved "https://registry.npmjs.org/react-redux/-/react-redux-9.1.2.tgz"
     integrity sha512-0OA4dhM1W48l3uzmv6B7TXPCGmokUU4p1M44DGN2/D9a1FjVPukVjER1PcPX97jIg6aUeLq1XJo1IpfbgULn0w==
     dependencies:
-      "@types/use-sync-external-store" "^0.0.3"
-      use-sync-external-store "^1.0.0"
+      "@types/use-sync-external-index" "^0.0.3"
+      use-sync-external-index "^1.0.0"
   
   react-refresh@^0.14.2:
     version "0.14.2"
@@ -1776,9 +1776,9 @@ Lockfile:
     dependencies:
       punycode "^2.1.0"
   
-  use-sync-external-store@^1.0.0:
+  use-sync-external-index@^1.0.0:
     version "1.2.2"
-    resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz"
+    resolved "https://registry.npmjs.org/use-sync-external-index/-/use-sync-external-index-1.2.2.tgz"
     integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
   
   vite@^5.2.0:

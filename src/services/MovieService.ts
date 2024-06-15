@@ -1,5 +1,5 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {movies$} from "../movies.ts";
+import {movies$} from "../movies";
 
 
 export const getMovies =  createAsyncThunk('movie/getMovies', async () => {

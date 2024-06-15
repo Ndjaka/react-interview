@@ -1,75 +1,101 @@
-import './app.scss'
-import Filter from "./components/Filter";
-import Pagination from "./components/Pagination";
-import {useAppDispatch, useAppSelector} from "./hooks";
-import {useEffect, useState} from "react";
-import {getMovies} from "./services/MovieService.ts";
+import { useEffect, useMemo, useState } from "react";
 import ReactLoading from "react-loading";
-import MovieList from "./components/MovieList";
+import { useAppDispatch, useAppSelector } from "./hooks";
+import { getMovies } from "./services/MovieService";
 import {setDeleteMovie, setToggleDislike, setToggleLike} from "./features/movie/movieSlice.ts";
 
-function App() {
+import './app.scss';
+import Filter from "./components/Filter";
+import Pagination from "./components/Pagination";
+import MovieList from "./components/MovieList";
 
-    const {status, movies} = useAppSelector(state => state.movie)
-    const dispatch = useAppDispatch()
-    const [movieList, setMovieList] = useState<MovieType[]>([]);
+function App() {
+    const { status, movies } = useAppSelector(state => state.movie);
+    const dispatch = useAppDispatch();
+    const [currentPage, setCurrentPage] = useState(1);
+    const [moviesPerPage, setMoviesPerPage] = useState(8);
+    const [categories, setCategories] = useState<string[]>([]);
 
     useEffect(() => {
         dispatch(getMovies());
     }, [dispatch]);
 
-    useEffect(() => {
-        setMovieList(movies)
-    }, [movies]);
 
-    const handleDelete = (id: number) => {
-        dispatch(setDeleteMovie(id));
-    }
+
+    const lastMovieIndex = useMemo(() => currentPage * moviesPerPage, [currentPage, moviesPerPage]);
+
+    const firstMovieIndex = useMemo(() =>  lastMovieIndex - moviesPerPage, [lastMovieIndex, moviesPerPage]);
+
+
+    const filteredMovies = useMemo(() => {
+        return movies.filter(movie => categories.length === 0 || categories.includes(movie.category));
+    }, [movies, categories]);
+
+    const currentMovies = useMemo(() => filteredMovies.slice(firstMovieIndex, lastMovieIndex),
+        [filteredMovies, firstMovieIndex, lastMovieIndex]);
+
+    const handlePaginate = (pageNumber: number) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const handleChangeCategories = (selectedOption: any) => {
+        setCategories(selectedOption.map((option: any) => option.value));
+    };
+
     const handleToggleLike = (id: number) => {
         dispatch(setToggleLike(id));
-    }
+    };
+
+    const handleDelete = (id: number) => {
+
+        if(currentMovies.length === 1 && currentPage == 1){
+            setCategories([]);
+        }
+
+        dispatch(setDeleteMovie(id));
+    };
 
     const handleToggleDislike = (id: number) => {
         dispatch(setToggleDislike(id));
-    }
+    };
 
     return (
-        <div className={"container"}>
-            <div className={"container__header"}>
+        <div className="container">
+            <div className="container__header">
                 <h1>Movies</h1>
                 <Filter
-                    handleChange={(selectedOption: any) => {
-                        if (selectedOption.length === 0) {
-                            setMovieList(movies);
-                        } else {
-                            const filteredMovies = movies.filter(movie => selectedOption.some((option: any) => option.value === movie.category));
-                            setMovieList(filteredMovies);
-                        }
-                    }
-                    }
+                    values={categories.map(category => ({ value: category, label: category }))}
+                    movies={movies}
+                    handleChange={handleChangeCategories}
                 />
             </div>
 
-            <div className={"container__content"}>
-                <div className={"container__content__status"}>
-                    {status === 'loading' && <ReactLoading type={"spin"} color={"#000"} height={25} width={25}/> }
+            <div className="container__content">
+                <div className="container__content__status">
+                    {status === 'loading' && <ReactLoading type="spin" color="#000" height={25} width={25} />}
                     {status === 'failed' && <p>Failed to fetch movies</p>}
                     {status === 'idle' && movies.length === 0 && <p>No movies found</p>}
                 </div>
 
-                {
-                    movieList.length > 0 && <MovieList
-                        movies={movieList}
+                {currentMovies.length > 0 && (
+                    <MovieList
+                        movies={currentMovies}
                         onDelete={handleDelete}
                         onToggleLike={handleToggleLike}
                         onToggleDislike={handleToggleDislike}
                     />
-                }
+                )}
             </div>
 
-            <Pagination/>
+            <Pagination
+                currentPage={currentPage}
+                moviesPerPage={moviesPerPage}
+                onPaginate={handlePaginate}
+                setMoviesPerPage={setMoviesPerPage}
+                totalMovies={filteredMovies.length}
+            />
         </div>
-    )
+    );
 }
 
-export default App
+export default App;

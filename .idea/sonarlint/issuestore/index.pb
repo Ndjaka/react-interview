@@ -122,3 +122,7 @@ L
 .node_modules/react-redux/dist/react-redux.d.ts,4/e/4e628409838766e8988ecfeb0e225af72f519a05
 `
 0node_modules/@reduxjs/toolkit/src/createSlice.ts,6/0/601433535b383471b8244f7747312767ff5b8563
+M
+node_modules/vite/client.d.ts,4/d/4d695413c6fbc0b004252c941441dd9e461d86ab
+Z
+*src/components/MovieCard/movie-cardV2.scss,e/8/e8585b25edb364c263cd585c6f768b57e3891146

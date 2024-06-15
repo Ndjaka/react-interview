@@ -6,4 +6,5 @@ interface MovieType {
     dislikes: number;
     liked?: boolean;
     disliked?: boolean;
+    image?: string;
 }

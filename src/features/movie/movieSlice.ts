@@ -48,7 +48,8 @@ export const movieSlice = createSlice({
                 }
                 return movie;
             })
-        }
+        },
+
 
     },
     extraReducers: (builder) => {

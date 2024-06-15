@@ -22,6 +22,7 @@ const MovieList = (props : MovieListProps) => {
                     dislikes={movie.dislikes}
                     onDelete={() => onDelete(Number(movie.id))}
                     liked={movie.liked}
+                    image={movie.image}
                     disliked={movie.disliked}
                     onToggleLike={() => onToggleLike(Number(movie.id))}
                     onToggleDislike={() => onToggleDislike(Number(movie.id))}

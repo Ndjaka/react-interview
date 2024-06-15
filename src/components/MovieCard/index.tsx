@@ -13,39 +13,53 @@ interface MovieCardProps {
     disliked?: boolean;
     onToggleLike?: () => void;
     onToggleDislike?: () => void;
+    image?: string;
 }
 
 const MovieCard = (props: MovieCardProps) => {
-    const {title, category, likes, dislikes, onDelete , liked,disliked, onToggleDislike,    onToggleLike} = props;
+    const {title, category, likes, dislikes, onDelete, liked, disliked, onToggleDislike, onToggleLike, image} = props;
 
     return (
-        <div className={'movie-card'}>
-            <h4 className={'movie-card__title'}>{title}</h4>
-            <p className={'movie-card__category'}>{category}</p>
-            <ProgressBar dislikes={dislikes} likes={likes}/>
-            <div className={'movie-card__actions'}>
-                <div className={'movie-card__actions-likes'}>
-                    <button onClick={onToggleLike}>
+        <div className={'movie-card'}
+             style={{
+                 backgroundImage: `url(${image})`,
+                 backgroundSize: 'cover',
+             }}>
+            <div className={'movie-card__content'}>
 
-                        <ThumbsUp
-                            color={liked ? '#82a9f8' : '#000'}
+                <div className={'movie-card__content__title'}>
+                    <h4>{title}</h4>
+                    <p>{category}</p>
+                </div>
+                <ProgressBar likes={likes} dislikes={dislikes}/>
+                <div className={'movie-card__content__actions'}>
+                    <div className={'movie-card__content__actions-likes'}>
+                        <div onClick={onToggleLike}>
+                            <ThumbsUp
+                                color={liked ? '#faf9f9' : '#4A5555'}
+                                size={20}
+                            /> <span>
+                        {likes}</span>
+
+                        </div>
+                        <div onClick={onToggleDislike}>
+                            <ThumbsDown
+                                color={disliked ? '#faf9f9' : '#4A5555'}
+                                size={18}
+                            /><span>{dislikes}</span>
+                        </div>
+
+                    </div>
+                    <div className={'movie-card__content__actions-delete'} onClick={onDelete}>
+                        <Trash
+                            color={'#4A5555'}
                             size={20}
-                        /> <span> {likes}</span>
-                    </button>
-                    <button onClick={onToggleDislike}>
-                        <ThumbsDown
-                            color={disliked ? '#82a9f8' : '#000'}
-                            size={20}
-                        /><span>{dislikes}</span>
-                    </button>
+                        />
+                    </div>
+
+
                 </div>
 
-                <button className={'movie-card__actions-delete'} onClick={onDelete}>
-                    <Trash
-                        color={'rgba(213,0,0,0.68)'}
-                        size={20}
-                    />
-                </button>
             </div>
         </div>
     )

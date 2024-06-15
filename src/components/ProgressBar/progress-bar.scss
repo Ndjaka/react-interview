@@ -1,12 +1,13 @@
 
 .progress-bar{
-  height: 8px;
-  background: #E0E0E0;
+  height: 3px;
+  background: #4A5555;
   border-radius: 5px;
   margin-top: 10px;
+  width: 40%;
   &__inner{
     height: 100%;
-    background: #82a9f8;
+    background: #F1F2F3;
     border-radius: 5px;
   }
 }

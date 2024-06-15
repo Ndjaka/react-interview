@@ -2,9 +2,10 @@
 .pagination {
   display: flex;
   justify-content: center;
+    align-items: center;
   margin-top: 20px;
-    gap: 10px;
-
+  gap: 10px;
+  color: #F1F2F3;
   button{
     padding: 8px;
     border: none;

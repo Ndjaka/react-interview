@@ -8,7 +8,9 @@ interface ProgressBarProps {
 const ProgressBar = (props : ProgressBarProps) => {
    const {likes, dislikes} = props;
     return (
-        <div className={'progress-bar'}>
+        <div
+            data-testid={'progress-bar'}
+            className={'progress-bar'}>
             <div
                 style={{
                     width: `${likes / (likes + dislikes) * 100}%`

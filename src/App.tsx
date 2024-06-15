@@ -42,21 +42,21 @@ function App() {
         setCategories(selectedOption.map((option: any) => option.value));
     };
 
-    const handleToggleLike = (id: number) => {
-        dispatch(setToggleLike(id));
+    const handleToggleLike = (id: string) => {
+        dispatch(setToggleLike(Number(id)));
     };
 
-    const handleDelete = (id: number) => {
+    const handleDelete = (id: string) => {
 
         if(currentMovies.length === 1 && currentPage == 1){
             setCategories([]);
         }
 
-        dispatch(setDeleteMovie(id));
+        dispatch(setDeleteMovie(Number(id)));
     };
 
-    const handleToggleDislike = (id: number) => {
-        dispatch(setToggleDislike(id));
+    const handleToggleDislike = (id: string) => {
+        dispatch(setToggleDislike(Number(id)));
     };
 
     return (

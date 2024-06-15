@@ -19,8 +19,9 @@ const Filter = (props : FilterProps) => {
 
 
     return (
-        <div className={"filter"}>
+        <div className={"filter"} data-testid={"filter"}>
             <Select
+
                 className={"filter__select"}
                 styles={{
                     control: (styles) => ({

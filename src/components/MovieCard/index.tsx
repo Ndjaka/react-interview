@@ -20,7 +20,9 @@ const MovieCard = (props: MovieCardProps) => {
     const {title, category, likes, dislikes, onDelete, liked, disliked, onToggleDislike, onToggleLike, image} = props;
 
     return (
-        <div className={'movie-card'}
+        <div
+            data-testid={'movie-card'}
+            className={'movie-card'}
              style={{
                  backgroundImage: `url(${image})`,
                  backgroundSize: 'cover',
@@ -34,24 +36,27 @@ const MovieCard = (props: MovieCardProps) => {
                 <ProgressBar likes={likes} dislikes={dislikes}/>
                 <div className={'movie-card__content__actions'}>
                     <div className={'movie-card__content__actions-likes'}>
-                        <div onClick={onToggleLike}>
+                        <div onClick={onToggleLike} data-testid={'like'}>
                             <ThumbsUp
+                                data-testid={'thumbs-up'}
                                 color={liked ? '#faf9f9' : '#4A5555'}
                                 size={20}
                             /> <span>
                         {likes}</span>
 
                         </div>
-                        <div onClick={onToggleDislike}>
+                        <div onClick={onToggleDislike} data-testid={'dislike'}>
                             <ThumbsDown
+                                data-testid={'thumbs-down'}
                                 color={disliked ? '#faf9f9' : '#4A5555'}
                                 size={18}
                             /><span>{dislikes}</span>
                         </div>
 
                     </div>
-                    <div className={'movie-card__content__actions-delete'} onClick={onDelete}>
+                    <div className={'movie-card__content__actions-delete'} onClick={onDelete} data-testid={'delete'}>
                         <Trash
+                            data-testid={'trash'}
                             color={'#4A5555'}
                             size={20}
                         />

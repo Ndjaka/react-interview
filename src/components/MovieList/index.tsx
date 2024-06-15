@@ -3,16 +3,16 @@ import './movie-list.scss';
 
 interface MovieListProps {
     movies: MovieType[];
-    onDelete: (id: number) => void;
-    onToggleLike: (id: number) => void;
-    onToggleDislike: (id: number) => void;
+    onDelete: (id: string) => void;
+    onToggleLike: (id: string) => void;
+    onToggleDislike: (id: string) => void;
 }
 const MovieList = (props : MovieListProps) => {
 
     const {movies, onDelete, onToggleLike, onToggleDislike} = props;
 
     return (
-        <div className={'movie-list'}>
+        <div className={'movie-list'} data-testid={'movie-list'}>
             {movies.map(movie => (
                 <MovieCard
                     key={movie.id}
@@ -20,12 +20,12 @@ const MovieList = (props : MovieListProps) => {
                     category={movie.category}
                     likes={movie.likes}
                     dislikes={movie.dislikes}
-                    onDelete={() => onDelete(Number(movie.id))}
+                    onDelete={() => onDelete(movie.id)}
                     liked={movie.liked}
                     image={movie.image}
                     disliked={movie.disliked}
-                    onToggleLike={() => onToggleLike(Number(movie.id))}
-                    onToggleDislike={() => onToggleDislike(Number(movie.id))}
+                    onToggleLike={() => onToggleLike(movie.id)}
+                    onToggleDislike={() => onToggleDislike(movie.id)}
                 />
             ))}
 

@@ -1,3 +1,35 @@
+
+## Installation
+
+Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé avant de suivre ces étapes.
+
+1. **Cloner le dépôt :**
+
+   ```bash
+   git clone https://github.com/Ndjaka/react-interview.git
+
+2. **Installer les dépendances :**
+
+   ```bash
+   npm install
+   ```
+
+3. **Lancer le projet :**
+
+   ```bash 
+   npm run dev
+   ```
+
+## Scripts disponibles
+
+- npm run test : Exécute les tests avec Vitest.
+- npm run dev : Démarre l'environnement de développement avec Vite.
+- npm run coverage : Exécute les tests avec la couverture de code.
+- npm run build : Compile le code avec TypeScript et construit le projet avec Vite.
+- npm run lint : Exécute ESLint pour le linting.
+- npm run preview : Démarre un aperçu de production avec Vite.
+
+
 # react-interview
 
 1. Lister les films dans des cartes avec: le titre en gras, la catégorie et une jauge type Youtube indiquant le ratio likes/dislikes. Les cartes doivent être côtes à côtes et responsive. Càd que lorsque la fenêtre se réduit, les cartes sautent à la ligne suivante.

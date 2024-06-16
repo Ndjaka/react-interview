@@ -1,4 +1,8 @@
 .filter{
    width: 300px;
 
+   @media screen and (max-width: 425px){
+       width: 100%;
+   }
+
 }

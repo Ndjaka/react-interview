@@ -43,15 +43,6 @@ const Filter = (props : FilterProps) => {
                             cursor: 'pointer'
                         }
                     },
-                     menu: (styles) => ({
-                        ...styles,
-                        backgroundColor: '#000000',
-                        color: '#4A5555',
-                        boxShadow: '0 0 5px rgba(0,0,0,0.1)',
-                        cursor: 'pointer'
-                     }
-                    ),
-
                 }
                 }
                 isMulti

@@ -37,7 +37,7 @@ describe('MovieList', () => {
     });
 
     it('should render components without crashing', () => {
-        const { getByTestId } = render(<MovieList
+        const { getByTestId,getByText } = render(<MovieList
             movies={movies}
             onDelete={mockDelete}
             onToggleLike={mockToggleLike}
@@ -46,6 +46,7 @@ describe('MovieList', () => {
 
         const movieList = getByTestId('movie-list');
         expect(movieList).toBeInTheDocument();
+        expect(getByText('test')).toBeInTheDocument();
     });
 
     it('should have 2 cards', () => {

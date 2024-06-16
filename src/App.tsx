@@ -60,7 +60,7 @@ function App() {
     };
 
     return (
-        <div className="container">
+        <div className="container" data-testid="app">
             <div className="container__header">
                 <h1>Movies</h1>
                 <Filter

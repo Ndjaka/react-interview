@@ -1,5 +1,6 @@
+import React, {useCallback, useMemo} from 'react';
 import './pagination.scss';
-import {ChevronLeft, ChevronRight} from "react-feather";
+import { ChevronLeft, ChevronRight } from "react-feather";
 
 interface PaginationProps {
     totalMovies: number;
@@ -8,31 +9,33 @@ interface PaginationProps {
     currentPage: number;
     setMoviesPerPage: (perPage: number) => void;
 }
-const Pagination = (props : PaginationProps) => {
-    const {totalMovies, moviesPerPage, onPaginate, currentPage, setMoviesPerPage} = props;
 
-    const totalPages = Math.ceil(totalMovies / moviesPerPage);
+const Pagination = (props: PaginationProps) => {
+    const { totalMovies, moviesPerPage, onPaginate, currentPage, setMoviesPerPage } = props;
+    const totalPages = useMemo(() => Math.ceil(totalMovies / moviesPerPage), [totalMovies, moviesPerPage])
 
-    const handleChangePage = (page: number) => {
+    const handleChangePage = useCallback((page: number) => {
         onPaginate(page);
-    }
+    }, [onPaginate]);
 
-    const handleChangePerPage = (e: any) => {
-        setMoviesPerPage(e.target.value);
-    }
+    const handleChangePerPage = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+        setMoviesPerPage(Number(e.target.value));
+    }, [setMoviesPerPage]);
 
     return (
-        <div className={'pagination'}>
+        <div className='pagination' data-testid='pagination'>
             <button
+                data-testid='prev-button'
                 disabled={currentPage === 1}
                 onClick={() => handleChangePage(currentPage - 1)}>
-                <ChevronLeft/>
+                <ChevronLeft />
             </button>
-             <p>{currentPage} / {totalPages}</p>
+            <p>{currentPage} / {totalPages}</p>
             <button
+                data-testid='next-button'
                 disabled={currentPage === totalPages}
                 onClick={() => handleChangePage(currentPage + 1)}>
-                <ChevronRight/>
+                <ChevronRight />
             </button>
             <select onChange={handleChangePerPage} value={moviesPerPage}>
                 <option value={4}>4</option>

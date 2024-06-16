@@ -124,10 +124,6 @@ L
 0node_modules/@reduxjs/toolkit/src/createSlice.ts,6/0/601433535b383471b8244f7747312767ff5b8563
 M
 node_modules/vite/client.d.ts,4/d/4d695413c6fbc0b004252c941441dd9e461d86ab
-Z
-*src/components/MovieCard/movie-cardV2.scss,e/8/e8585b25edb364c263cd585c6f768b57e3891146
-T
-$src/components/Filter/Filter.test.ts,f/b/fb7e3aad45447c1fc40747dc783cbd847c53e277
 U
 %src/components/Filter/Filter.test.tsx,5/d/5dd39c5e01313fc1e1d7f5993dcd39149f20dde4
 G
@@ -137,10 +133,12 @@ A
 S
 #node_modules/@types/jest/index.d.ts,5/7/571d98baab25e35bb8e355156723c07487613720
 [
-+src/components/MovieCard/MovieCard.test.tex,3/f/3f8638bd9b47ce3a45b8aee8937ee49c978081d2
-[
 +src/components/MovieCard/MovieCard.test.tsx,1/2/12c53f74e13c0351483734ea1c8ee6eeac7e0df3
-V
-&src/components/MovieList/MovieList.tsx,e/6/e6e679b7d07e6cba9dac3a5c113957144b473245
 [
 +src/components/MovieList/MovieList.test.tsx,8/5/85c0770a49fc771361a6961bd80b22b0de3c86b5
+@
+src/App.test.tsx,1/f/1fc1c06a0502bf303f8ba35e530938a98e7e35b2
+]
+-src/components/Pagination/Pagination.test.tsx,d/d/dde0c3573aad7a17d78ee70d5f3382f0d36733e3
+_
+/src/components/ProgressBar/ProgressBar.test.tsx,0/8/087c1704abd28db4013406090c175a3df28aad41

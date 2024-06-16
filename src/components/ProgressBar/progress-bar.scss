@@ -1,13 +1,15 @@
+@import '../../styles/colors.scss';
 
-.progress-bar{
+.progress-bar {
   height: 3px;
-  background: #4A5555;
+  background: $progress-bar-background;
   border-radius: 5px;
   margin-top: 10px;
   width: 40%;
-  &__inner{
+
+  &__inner {
     height: 100%;
-    background: #F1F2F3;
+    background: $progress-bar-inner-background;
     border-radius: 5px;
   }
 }

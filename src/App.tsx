@@ -72,7 +72,10 @@ function App() {
 
             <div className="container__content">
                 <div className="container__content__status">
-                    {status === 'loading' && <ReactLoading type="spin" color="#000" height={25} width={25} />}
+                    {status === 'loading' && <ReactLoading type="spin"
+                                                           color="#FFFFFF"
+                                                           height={25} width={25} />
+                    }
                     {status === 'failed' && <p>Failed to fetch movies</p>}
                     {status === 'idle' && movies.length === 0 && <p>No movies found</p>}
                 </div>
@@ -87,6 +90,7 @@ function App() {
                 )}
             </div>
 
+            {currentMovies.length > 0 && (
             <Pagination
                 currentPage={currentPage}
                 moviesPerPage={moviesPerPage}
@@ -94,6 +98,7 @@ function App() {
                 setMoviesPerPage={setMoviesPerPage}
                 totalMovies={filteredMovies.length}
             />
+            )}
         </div>
     );
 }

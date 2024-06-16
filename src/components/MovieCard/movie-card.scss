@@ -1,24 +1,25 @@
-.movie-card{
+@import '../../styles/colors.scss';
+
+.movie-card {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-
   justify-content: end;
   height: 250px;
   margin: 8px;
   padding: 15px;
   transition: all 0.3s;
 
-  &:hover{
+  &:hover {
     transform: scale(1.05);
   }
 
   &__content {
-      height: 80px;
-      border-radius: 8px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 10px;
+    height: 80px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid $border-card-content-color;
+    padding: 10px;
 
     &__title {
       display: flex;
@@ -26,76 +27,75 @@
       gap: 10px;
 
       h4 {
-        font-size: .9rem;
-        color: #fff;
+        font-size: 0.9rem;
+        color: $text-color;
       }
-      p{
-        font-size: .7rem;
-        color: #fff;
+
+      p {
+        font-size: 0.7rem;
+        color: $text-color;
       }
     }
 
     &__actions {
       margin-top: 6px;
-        display: flex;
-        justify-content: space-between;
-      &-likes{
+      display: flex;
+      justify-content: space-between;
+
+      &-likes {
         display: flex;
         align-items: center;
         gap: 5px;
 
-        div{
-            display: flex;
-            align-items: center;
-          &:hover{
+        div {
+          display: flex;
+          align-items: center;
+
+          &:hover {
             transform: scale(1.05);
           }
-          & > svg{
-          transition: all 0.3s;
-          cursor: pointer;
-          vertical-align: baseline;
-          &:hover{
-            stroke: #faf9f9;
+
+          & > svg {
+            transition: all 0.3s;
+            cursor: pointer;
+            vertical-align: baseline;
+
+            &:hover {
+              stroke: $hover-color;
+            }
           }
 
-        }
-
-          & > span{
+          & > span {
             font-size: 1rem;
-            color: #fff;
+            color: $text-color;
             vertical-align: baseline;
             margin-left: 5px;
             padding: 0;
           }
         }
-
-
-
       }
 
-        &-delete{
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-            &:hover{
-            transform: scale(1.05);
-            }
-            & > svg{
-            transition: all 0.3s;
-            cursor: pointer;
-            vertical-align: baseline;
-            &:hover{
-                stroke: #faf9f9;
-            }
-            }
+      &-delete {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: scale(1.05);
         }
 
+        & > svg {
+          transition: all 0.3s;
+          cursor: pointer;
+          vertical-align: baseline;
 
+          &:hover {
+            stroke: $hover-color;
+          }
+        }
+      }
     }
-
-
   }
-
 }

@@ -1,3 +1,4 @@
+@import "./styles/colors.scss";
 .container {
     max-width: 1200px;
     margin: auto;
@@ -16,11 +17,12 @@
         h1{
             font-size: 2rem;
             font-weight: 600;
-            color:  #fff;
+            color: $text-color;
         }
     }
 
     &__content{
+        color: $text-color;
         &__status{
             display: flex;
             align-items: center;

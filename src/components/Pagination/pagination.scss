@@ -1,3 +1,4 @@
+@import '../../styles/colors.scss';
 
 .pagination {
   display: flex;
@@ -6,11 +7,11 @@
   margin-top: 20px;
   margin-bottom: 20px;
   gap: 10px;
-  color: #F1F2F3;
+  color: $pagination-color;
 
-  button {
+  button, select {
     padding: 8px;
-    border: 1px solid #FAF9F9A1;
+    border: 1px solid $button-border-color;
     border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
@@ -18,8 +19,15 @@
     color: white;
     background-color: transparent;
     transition: all 0.3s;
+    outline: none;
 
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+  }
 
+  button {
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -27,22 +35,9 @@
   }
 
   select {
-    padding: 8px;
-    border: 1px solid #FAF9F9A1;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-    transition: all 0.3s;
-    outline: none;
-    background-color: transparent;
-
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
   }
-
-
 }

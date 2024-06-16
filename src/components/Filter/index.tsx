@@ -35,14 +35,20 @@ const Filter = (props : FilterProps) => {
                         cursor: 'pointer',
                         outline: 'none'
                     }),
-                    option: (styles, {isFocused, isSelected}) => {
+                    option: (styles, {isFocused, isSelected }) => {
                         return {
                             ...styles,
-                            backgroundColor: isSelected ? '#4A5555' : isFocused ? '#faf9f9' : '#faf9f9',
-                            color: isSelected ? '#faf9f9' : isFocused ? '#4A5555' : '#4A5555',
-                            cursor: 'pointer'
+                            color: isSelected ? '#faf9f9' : isFocused ? '#faf9f9' : '#4A5555',
+                            cursor: 'pointer',
+                            borderRadius: '5px',
+                            backgroundColor:  isFocused ? 'rgba(141,140,140,0.93)' : 'transparent',
                         }
                     },
+                    menu: (styles) => ({
+                        ...styles,
+                        backgroundColor: '#d3d3d3',
+                        padding: '10px',
+                    }),
                 }
                 }
                 isMulti

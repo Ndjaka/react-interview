@@ -142,3 +142,5 @@ S
 -src/components/Pagination/Pagination.test.tsx,d/d/dde0c3573aad7a17d78ee70d5f3382f0d36733e3
 _
 /src/components/ProgressBar/ProgressBar.test.tsx,0/8/087c1704abd28db4013406090c175a3df28aad41
+F
+src/styles/colors.scss,f/f/fff11531d06eec54ec8e40d70d281d74b6e6c52e
